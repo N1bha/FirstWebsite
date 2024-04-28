@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 0px 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav ul {
+            font-size: 14px;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        .map-container {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px; /* Adjust the margin as needed */
+            padding: 0px;
+        }
+        .map {
+            height: 540px;
+            width: 49%; /* Adjust the width to leave space for the margin */
+        }
+        .title-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            background-color: #f2f2f2;
+            padding: 0px;
+            margin: 0px 2px;
+        }
+        .title-box {
+            margin: 5px 10px; /* Add space between title boxes */
+            font-weight: bold;
+            font-size: 20px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 5px 8px;
+        }
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+        .listing-button {
+            color: white;
+            padding: 12px 24px;
+            border-radius: 4px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        .listing-button:hover {
+            background-color: #45a049;
+        }
+        .listing-button i {
+            margin-right: 5px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-section">
+            <!-- Left section -->
+            <nav>
+                <ul>
+                    <li><a href="Home.html"><i class="fas fa-home home-icon"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-section">
+            <!-- Center section -->
+            <h1 class="header-title">Survey Maps</h1>
+        </div>
+        <div class="header-section">
+            <!-- Right section -->
+            <a href="#" class="listing-button"><i class="fas fa-list"></i></a>
+        </div>
+    </header>
+    <div class="map-container">
+        <div id="map1" class="map"></div>
+        <div id="map2" class="map"></div>
+    </div>
+    <div class="title-container">
+        <div class="title-container"><div class="title-box">2D REPRESENTATION</div></div>
+        <div class="title-container"><div class="title-box">3D REPRESENTATION</div></div>
+    </div>
+
+    <footer>
+        <a href="LiveTrack.html"><i class="fas fa-arrow-right"></i> Next Page</a>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        var map1 = L.map('map1').setView([51.505, -0.09], 13); // Set initial map center and zoom
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map1); // Add OpenStreetMap tiles
+
+        var map2 = L.map('map2').setView([51.505, -0.09], 13); // Set initial map center and zoom
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map2); // Add OpenStreetMap tiles
+
+        // Example markers
+        L.marker([51.5, -0.09]).addTo(map1).bindPopup('Marker 1');
+        L.marker([51.51, -0.1]).addTo(map2).bindPopup('Marker 2');
+    </script>
+</body>
+</html>

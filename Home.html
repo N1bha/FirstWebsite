@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow:hidden;
+            position:relative;
+        }
+
+        header {
+            background-color:black;
+            color:white;
+            text-align: center;
+            padding: 0px 0px;
+            display:flex;
+            justify-content:space-between;
+            align-items: center;
+        }
+        /* Change font for the header */
+        .header-title {
+            font-family: "Times New Roman", Times, serif;
+            font-size:30px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+       
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin: 0 20px;
+            font-size: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+           
+        }
+        /* Dropdown container */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        /* Dropdown content (hidden by default) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            right: 0; /* Align dropdown to the right */
+            margin-left: -60px; /* Adjust this value as needed */
+        }
+          /* Links inside the dropdown */
+          .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        /* Change color of dropdown links on hover */
+        .dropdown-content a:hover {
+            background-color: #aaf5b2;
+        }
+
+        /* Show the dropdown menu on hover */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #f2f2f2;
+        }
+
+        input[type=text], select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+        label {
+            padding: 12px 0;
+            display: inline-block;
+        }
+
+        input[type=submit] {
+            background-color: #04AA6D;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+        #video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            object-fit: cover;
+        }
+        #image-background {
+            position: center;
+        }
+        /* Responsive layout - when the screen is less than 600px wide, make the form columns stack on top of each other */
+        @media screen and (max-width: 600px) {
+            .container {
+                width: 100%;
+                padding: 10px;
+            }
+
+            .col-25, .col-75, input[type=submit] {
+                width: 100%;
+                margin-top: 0px;
+            }
+
+            header {
+                padding: 5px 0px;
+            }
+
+            nav ul {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-section" style="flex: 1" >
+            <!-- Left section -->
+            <img src="isro.jpg" alt="isro" style="width:25%; height:25%;margin-right: 400px;">           
+        </div>
+        <div class="header-section" style="flex: 1">
+            <!-- Center section --> 
+            <h1 class="header-title"  style="margin: 0;">CONNECTING DOTS</h1>
+        </div> 
+        <div class="header-section" style="flex: 1">
+            <!-- Right section -->
+            <div class="dropdown">
+            <a href="#" class="listing-button" style="margin-left: 400px;"><i class="fas fa-list"></i></a>
+            <div class="dropdown-content">
+                <a href="Survey.html">Survey Map</a>
+                <a href="LiveTrack.html">Live Track</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </header>   
+    <video id="video-background" autoplay loop muted>
+        <source src="3903754-hd_1920_1080_25fps.mp4" type="video/mp4">
+    </video>
+    <div class="container">
+        <form action="survey.html">
+            <div class="row">
+                <div class="col-25">
+                    <label for="State">State</label>
+                <div class="col-75">
+                    <select id="State" name="State">
+                        <option value="Select">Select</option>
+                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                        <option value="Assam">Assam</option>
+                        <option value="Bihar">Bihar</option>
+                        <option value="Chhattisgarh">Chhattisgarh</option>
+                        <option value="Goa">Goa</option>
+                        <option value="Gujarat">Gujarat</option>
+                        <option value="Haryana">Haryana</option>
+                        <option value="Himachal Pradesh">Himachal Pradesh</option>
+                        <option value="india">India</option>
+                        <option value="Jharkhand">Jharkhand</option>
+                        <option value="Karnataka">Karnataka</option>
+                        <option value="Kerala">Kerala</option>
+                        <option value="Madhya Pradesh">Madhya Pradesh</option>
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Manipur">Manipur</option>
+                        <option value="Meghalaya">Meghalaya</option>
+                        <option value="Mizoram">Mizoram</option>
+                        <option value="Nagaland">Nagaland</option>
+                        <option value="Odisha">Odisha</option>
+                        <option value="Punjab">Punjab</option>
+                        <option value="Rajasthan">Rajasthan</option>
+                        <option value="Sikkim">Sikkim</option>
+                        <option value="Tamil Nadu">Tamil Nadu</option>
+                        <option value="Telangana">Telangana</option>
+                        <option value="Tripura">Tripura</option>
+                        <option value="Uttar Pradesh">Uttar Pradesh</option>
+                        <option value="Uttarakhand">Uttarakhand</option>
+                        <option value="West Bengal">West Bengal</option>
+                        <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                        <option value="Chandigarh">Chandigarh</option>
+                        <option value="Dadra and Nagar Haveli and Daman and Diu">Dadra and Nagar Haveli and Daman and Diu</option>
+                        <option value="Lakshadweep">Lakshadweep</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Puducherry">Puducherry</option>
+                        <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                        <option value="Ladakh">Ladakh</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="dname">Departure</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="dname" name="departurename" placeholder="Enter Departure..">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="desname">Destination</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="desname" name="destinationname" placeholder="Enter Destination..">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <input type="submit" value="Submit">
+                </div>
+            </div>
+        </form>
+    </div>
+    <footer style="display: flex; justify-content: center;">
+        <img src="IncredebleIndia.jpg" alt="Incredible India" style="width:auto; height:auto;object-fit: cover;">
+    </footer>
+    
+    <script>
+    </script>
+
+</body>
+</html>
